@@ -1,0 +1,81 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Crud</title>
+</head>
+<body>
+        <div class="w-75 mx-auto py-5">
+            <h3 class="p3-3 fw-border">Product Managment System</h3>
+
+                <label for="productNameInput">productName : <span class="text-danger d-none" id="nameSpan">*</span></label>
+                <input class="form-control mb-2"  type="text"  id="productNameInput">
+                <div class="alert alert-danger d-none" id="nameAlert">please enter valid name his frist Char uppercase</div>
+
+            <!--  هيفضل ظاهر ليه انو غلط لحد ما يكتب الصح input مع كل تغير بيحصل في ال  oninput -->
+            <label for="productPriceInput">productPrice : <span class="text-danger d-none" id="priceSpan">*</span></label>
+            <input  class="form-control mb-2" type="number"  id="productPriceInput">
+            <div class="alert alert-danger d-none" id="priceAlert">Please enter from $1,000 to $9,000</div>
+
+            <!-- بيعد ما المستخدم يخصل كتابه يقولوا نت صح وغلظ  onblur -->
+
+
+            <!-- <label for="productCategoryInput">ProductCategory  :<span class="text-danger d-none" id="CategorySpan">*</span></label>
+            <select class="form-select" aria-label="Default select example" id="productCategoryInput">
+                <option selected disabled>Open this select menu</option>
+                <option value="tv">tv</option>
+                <option value="mobile">mobile</option>
+                <option value="labtop">labtop</option>
+              </select> -->
+
+            <label for="productCategoryInput">ProductCategory : <span class="text-danger d-none" id="CategorySpan">*</span></label>
+            <input class="form-control mb-2" type="text"  id="productCategoryInput">
+            <div class="alert alert-danger d-none" id="CategoryAlert">Please insert a TV, mobile or laptop</div>
+
+
+            <label for="productDiscriptionInput">productDiscription : <span class="text-danger d-none" id="DiscriptionSpan">*</span></label>
+            <textarea class="form-control mb-2" type="text"  id="productDiscriptionInput"></textarea>
+
+
+            <div class="text-center pt-1">
+            <button onclick="addProdact();" disabled id="addBtn" class="btn btn-info">Add Product</button>
+            <button onclick="UpdataBook(productIndex);" id="updataBtn" class="btn btn-info d-none">Updata</button>
+             </div>
+
+        </div>
+
+
+
+        <div class="w-75 mx-auto  ">
+            <label for="search">search</label>
+            <input onkeyup="searchProducts(this.value)" class="form-control mb-2" type="text"  id="search" placeholder="search by name">
+<!--  inputهتعمل بحث في ال onkeyup -->
+            <!-- inputبيشتغل لما بيحصل تغير في ال oninput | valueوانا عايز القيمة ال جواها inputماسكة ال this -->
+        </div>
+
+
+        <table class="table table-striped w-75 mx-auto table-light">
+            <thead>
+                <th>index</th>
+                <th>ProductName</th>
+                <th>Productprise</th>
+                <th>ProductCategory</th>
+                <th>ProductDesc</th>
+                <th>update</th>
+                <th>delete</th>
+            </thead>
+            <tbody id="tableBody">
+                
+            </tbody>
+        </table>
+
+
+
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
